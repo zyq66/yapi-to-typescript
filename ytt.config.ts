@@ -23,7 +23,7 @@ export default defineConfig([
     outputFilePath: (interfaceInfo, changeCase) => {
       const filePathArr = interfaceInfo.path.split('/').slice(-2);
       const filePath = filePathArr.map((item) => changeCase.camelCase(item)).join('/');
-      return `app/pages/${filePath}.ts`; //生成文件位置
+      return `packages/pages/${filePath}.ts`; //生成文件位置
     },
     getRequestDataTypeName: (interfaceInfo, changeCase) => {
       return `${genApiInterfaceName(interfaceInfo, changeCase)}Request`;
